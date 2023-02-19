@@ -1,6 +1,7 @@
 import 'package:evernotes/constants/global_variables.dart';
 import 'package:evernotes/model/onboard_data.dart';
 import 'package:evernotes/screens/home.dart';
+import 'package:evernotes/screens/tasks_screen.dart';
 import 'package:evernotes/widgets/my_text_button.dart';
 import 'package:evernotes/widgets/onboard_nav_button.dart';
 import 'package:flutter/material.dart';
@@ -101,7 +102,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const Home(),
+                                builder: (context) => TasksScreen(),
                               ),
                             );
                           },
