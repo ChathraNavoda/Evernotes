@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:evernotes/blocs/bloc_exports.dart';
 import 'package:evernotes/model/task.dart';
 
 part 'tasks_event.dart';
@@ -39,4 +40,14 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
 
     emit(TasksState(allTasks: List.from(state.allTasks)..remove(event.task)));
   }
+
+  // @override
+  // TasksState? fromJson(Map<String, dynamic> json) {
+  //   return TasksState.fromMap(json);
+  // }
+
+  // @override
+  // Map<String, dynamic>? toJson(TasksState state) {
+  //   return state.toMap();
+  // }
 }

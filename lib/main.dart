@@ -3,17 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import 'blocs/bloc_exports.dart';
-import 'model/task.dart';
 
 bool? seenOnboard;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // final storage = await HydratedStorage.build(
+  //     storageDirectory: await getApplicationDocumentsDirectory());
   //to show the status bar
   SystemChrome.setEnabledSystemUIOverlays(
       [SystemUiOverlay.bottom, SystemUiOverlay.top]);
   BlocOverrides.runZoned(
     () => runApp(const MyApp()),
+    // storage: storage,
   );
 }
 
