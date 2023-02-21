@@ -1,6 +1,7 @@
 import 'package:evernotes/constants/global_variables.dart';
 import 'package:evernotes/model/task.dart';
 import 'package:evernotes/screens/add_task_sceen.dart';
+import 'package:evernotes/screens/my_drawer.dart';
 import 'package:evernotes/widgets/tasks_list.dart';
 import 'package:flutter/material.dart';
 import '../blocs/bloc_exports.dart';
@@ -44,14 +45,16 @@ class _TasksScreenState extends State<TasksScreen> {
               )
             ],
           ),
+          drawer: MyDrawer(),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const Center(
+              Center(
                 child: Chip(
                   label: Text(
-                    'Tasks:',
-                    style: TextStyle(color: GlobalVariables.secondaryColor),
+                    '${state.allTasks.length} : Tasks',
+                    style:
+                        const TextStyle(color: GlobalVariables.secondaryColor),
                   ),
                 ),
               ),
