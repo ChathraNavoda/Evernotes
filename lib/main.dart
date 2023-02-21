@@ -1,4 +1,5 @@
 import 'package:evernotes/screens/splash_screen.dart';
+import 'package:evernotes/services/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,13 +16,19 @@ void main() async {
   SystemChrome.setEnabledSystemUIOverlays(
       [SystemUiOverlay.bottom, SystemUiOverlay.top]);
   BlocOverrides.runZoned(
-    () => runApp(const MyApp()),
+    () => runApp(
+      MyApp(
+        appRouter: AppRouter(),
+      ),
+    ),
     // storage: storage,
   );
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key, required this.appRouter});
+
+  final AppRouter appRouter;
 
   // This widget is the root of your application.
   @override
@@ -35,6 +42,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.indigo,
         ),
         home: const SplashScreen(),
+        onGenerateRoute: appRouter.onGenerateRoute,
       ),
     );
   }
