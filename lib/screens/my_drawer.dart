@@ -33,29 +33,35 @@ class MyDrawer extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
-            BlocBuilder<TasksBloc, TasksState>(builder: (context, state) {
-              return GestureDetector(
-                onTap: () => Navigator.of(context).pushNamed(
-                  TasksScreen.id,
-                ),
-                child: ListTile(
-                  leading: const Icon(Icons.folder_special),
-                  title: const Text('My Tasks'),
-                  trailing: Text('${state.allTasks.length}'),
-                ),
-              );
-            }),
+            BlocBuilder<TasksBloc, TasksState>(
+              builder: (context, state) {
+                return GestureDetector(
+                  onTap: () => Navigator.of(context).pushNamed(
+                    TasksScreen.id,
+                  ),
+                  child: ListTile(
+                    leading: const Icon(Icons.folder_special),
+                    title: const Text('My Tasks'),
+                    trailing: Text('${state.allTasks.length}'),
+                  ),
+                );
+              },
+            ),
             const Divider(),
-            GestureDetector(
-              onTap: () => Navigator.of(context).pushNamed(
-                RecycleBin.id,
-              ),
-              child: const ListTile(
-                leading: Icon(Icons.delete),
-                title: Text('My Bin'),
-                trailing: Text('0'),
-              ),
-            )
+            BlocBuilder<TasksBloc, TasksState>(
+              builder: (context, state) {
+                return GestureDetector(
+                  onTap: () => Navigator.of(context).pushNamed(
+                    RecycleBin.id,
+                  ),
+                  child: ListTile(
+                    leading: const Icon(Icons.delete),
+                    title: const Text('My Bin'),
+                    trailing: Text('${state.removedTasks.length}'),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
