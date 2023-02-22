@@ -1,3 +1,4 @@
+import 'package:evernotes/blocs/bloc_exports.dart';
 import 'package:evernotes/constants/global_variables.dart';
 import 'package:evernotes/screens/recycle_bin.dart';
 import 'package:evernotes/screens/tasks_screen.dart';
@@ -32,16 +33,18 @@ class MyDrawer extends StatelessWidget {
                 style: Theme.of(context).textTheme.headline5,
               ),
             ),
-            GestureDetector(
-              onTap: () => Navigator.of(context).pushNamed(
-                TasksScreen.id,
-              ),
-              child: const ListTile(
-                leading: Icon(Icons.folder_special),
-                title: Text('My Tasks'),
-                trailing: Text('0'),
-              ),
-            ),
+            BlocBuilder<TasksBloc, TasksState>(builder: (context, state) {
+              return GestureDetector(
+                onTap: () => Navigator.of(context).pushNamed(
+                  TasksScreen.id,
+                ),
+                child: ListTile(
+                  leading: const Icon(Icons.folder_special),
+                  title: const Text('My Tasks'),
+                  trailing: Text('${state.allTasks.length}'),
+                ),
+              );
+            }),
             const Divider(),
             GestureDetector(
               onTap: () => Navigator.of(context).pushNamed(
