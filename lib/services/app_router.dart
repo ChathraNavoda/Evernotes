@@ -1,5 +1,6 @@
 import 'package:evernotes/screens/recycle_bin.dart';
-import 'package:evernotes/screens/tasks_screen.dart';
+import 'package:evernotes/screens/tabs_screen.dart';
+import 'package:evernotes/screens/pending_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -9,9 +10,9 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => const RecycleBin(),
         );
-      case TasksScreen.id:
+      case TabsScreen.id:
         return MaterialPageRoute(
-          builder: (_) => const TasksScreen(),
+          builder: (_) => TabsScreen(),
         );
       default:
         return null;
