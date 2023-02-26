@@ -38,10 +38,9 @@ class _SplashScreenState extends State<SplashScreen> {
             begin: Alignment.topRight,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFFFAE5EA),
-              Color(0xFFCAEDFA),
-              Color(0xFFF9AECA),
-              Color(0xFFF992A9),
+              Colors.white,
+              Colors.grey,
+              Color(0xFF0b505a),
             ],
           ),
         ),
@@ -65,16 +64,16 @@ class _SplashScreenState extends State<SplashScreen> {
               style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
-                  color: GlobalVariables.secondaryColor),
+                  color: GlobalVariables.secondaryColorlight),
             ),
             const Text(
               "Life is easy when you plan everything",
               style: TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.bold,
-                  color: GlobalVariables.secondaryColor),
+                  color: GlobalVariables.secondaryColorlight),
             ),
-            CircularProgressIndicator()
+            const CircularProgressIndicator()
           ],
         ),
       ),

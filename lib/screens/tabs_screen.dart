@@ -75,15 +75,16 @@ class _TabsScreenState extends State<TabsScreen> {
         },
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(Icons.incomplete_circle_rounded),
+            icon: Icon(Icons.incomplete_circle_rounded,
+                color: Colors.amberAccent),
             label: "Pending Tasks",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.done),
+            icon: Icon(Icons.done, color: Colors.greenAccent),
             label: "Completed Tasks",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.favorite),
+            icon: Icon(Icons.favorite, color: Colors.redAccent),
             label: "Favotite Tasks",
           ),
         ],

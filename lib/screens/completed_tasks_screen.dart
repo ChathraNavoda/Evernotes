@@ -31,8 +31,8 @@ class CompletedTasksScreen extends StatelessWidget {
                 child: Chip(
                   label: Text(
                     '${taskList.length} : Tasks',
-                    style:
-                        const TextStyle(color: GlobalVariables.secondaryColor),
+                    style: const TextStyle(
+                        color: GlobalVariables.secondaryColorlight),
                   ),
                 ),
               ),

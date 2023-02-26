@@ -28,7 +28,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       width: 10,
       decoration: BoxDecoration(
           color: currentPage == index
-              ? GlobalVariables.secondaryColor
+              ? GlobalVariables.secondaryColordark
               : Color.fromARGB(255, 253, 253, 253),
           shape: BoxShape.circle),
     );
@@ -44,10 +44,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
             begin: Alignment.topRight,
             end: Alignment.bottomRight,
             colors: [
-              Color(0xFFFAE5EA),
-              Color(0xFFCAEDFA),
-              Color(0xFFF9AECA),
-              Color(0xFFF992A9),
+              Colors.white,
+              Colors.grey,
+              Color(0xFF0b505a),
             ],
           ),
         ),
@@ -71,7 +70,8 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                     Text(
                       onboardingContents[index].title,
                       style: const TextStyle(
-                          fontSize: 23, color: GlobalVariables.secondaryColor),
+                          fontSize: 23,
+                          color: GlobalVariables.secondaryColordark),
                       textAlign: TextAlign.center,
                     ),
                     SizedBox(

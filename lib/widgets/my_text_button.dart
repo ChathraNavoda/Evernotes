@@ -24,7 +24,7 @@ class MyTextButton extends StatelessWidget {
           onPressed: onPressed,
           child: Text(
             buttonName,
-            style: const TextStyle(color: GlobalVariables.secondaryColor),
+            style: const TextStyle(color: GlobalVariables.secondaryColordark),
           ),
           style: TextButton.styleFrom(backgroundColor: bgColor),
         ),

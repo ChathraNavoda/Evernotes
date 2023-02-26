@@ -31,8 +31,8 @@ class PendingTasksScreen extends StatelessWidget {
                 child: Chip(
                   label: Text(
                     '${taskList.length} : Pending | ${state.completedTasks.length} : Completed',
-                    style:
-                        const TextStyle(color: GlobalVariables.secondaryColor),
+                    style: const TextStyle(
+                        color: GlobalVariables.secondaryColorlight),
                   ),
                 ),
               ),

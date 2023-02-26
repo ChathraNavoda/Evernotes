@@ -32,7 +32,8 @@ class RecycleBin extends StatelessWidget {
               child: Chip(
                 label: Text(
                   '${state.removedTasks.length}Tasks',
-                  style: const TextStyle(color: GlobalVariables.secondaryColor),
+                  style: const TextStyle(
+                      color: GlobalVariables.secondaryColorlight),
                 ),
               ),
             ),
