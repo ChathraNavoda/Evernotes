@@ -15,6 +15,7 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
     on<MarkFavoriteOrunfavoriteTask>(_onMarkFavoriteOrunfavoriteTask);
     on<EditTask>(_onEditTask);
     on<RestoreTask>(_onRestoreTask);
+    on<DeleteAllTasks>(_onDeleteAllTasks);
   }
 
   void _onAddTask(AddTask event, Emitter<TasksState> emit) {
@@ -167,6 +168,16 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
               isDone: false,
               isFavorite: false,
             )),
+      completedTasks: state.completedTasks,
+      favoriteTasks: state.favoriteTasks,
+    ));
+  }
+
+  void _onDeleteAllTasks(DeleteAllTasks event, Emitter<TasksState> emit) {
+    final state = this.state;
+    emit(TasksState(
+      removedTasks: List.from(state.removedTasks)..clear(),
+      pendingTasks: state.pendingTasks,
       completedTasks: state.completedTasks,
       favoriteTasks: state.favoriteTasks,
     ));
