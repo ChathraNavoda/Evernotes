@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 class PopupMenu extends StatelessWidget {
   final Task task;
   final VoidCallback cancelOrDeleteCallback;
+  final VoidCallback likeOrDislike;
 
   const PopupMenu({
     Key? key,
     required this.cancelOrDeleteCallback,
+    required this.likeOrDislike,
     required this.task,
   }) : super(key: key);
 
@@ -30,13 +32,15 @@ class PopupMenu extends StatelessWidget {
                 PopupMenuItem(
                   child: TextButton.icon(
                     onPressed: null,
-                    icon: const Icon(
-                      Icons.bookmark,
-                      color: Colors.blueAccent,
-                    ),
-                    label: const Text('Add to Bookmarks'),
+                    icon: task.isFavorite == false
+                        ? const Icon(Icons.bookmark_add_outlined,
+                            color: Colors.blueAccent)
+                        : const Icon(Icons.bookmark_remove_outlined),
+                    label: task.isFavorite == false
+                        ? const Text('Add to Bookmarks')
+                        : const Text('Remove from bookmarks'),
                   ),
-                  onTap: () {},
+                  onTap: likeOrDislike,
                 ),
                 PopupMenuItem(
                     child: TextButton.icon(

@@ -39,6 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
             end: Alignment.bottomRight,
             colors: [
               Colors.white,
+              Colors.white,
               Colors.grey,
               Color(0xFF0b505a),
             ],
@@ -55,23 +56,23 @@ class _SplashScreenState extends State<SplashScreen> {
               children: [
                 Center(
                   child: Lottie.network(
-                      'https://assets9.lottiefiles.com/packages/lf20_z4cshyhf.json'),
+                      'https://assets7.lottiefiles.com/packages/lf20_z4cshyhf.json'),
                 ),
               ],
             ),
             const Text(
               "Evernotes",
               style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: GlobalVariables.secondaryColorlight),
+                  fontSize: 25,
+                  fontWeight: FontWeight.w900,
+                  color: GlobalVariables.themeColor),
             ),
             const Text(
               "Life is easy when you plan everything",
               style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 17,
                   fontWeight: FontWeight.bold,
-                  color: GlobalVariables.secondaryColorlight),
+                  color: GlobalVariables.themeColor),
             ),
             const CircularProgressIndicator()
           ],

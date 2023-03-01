@@ -35,10 +35,10 @@ class Task extends Equatable {
       title: title ?? this.title,
       description: description ?? this.description,
       id: id ?? this.id,
-      date: id ?? this.date,
+      date: date ?? this.date,
       isDone: isDone ?? this.isDone,
       isDeleted: isDeleted ?? this.isDeleted,
-      isFavorite: isDeleted ?? this.isFavorite,
+      isFavorite: isFavorite ?? this.isFavorite,
     );
   }
 
@@ -49,6 +49,7 @@ class Task extends Equatable {
       'id': id,
       'isDone': isDone,
       'isDeleted': isDeleted,
+      'isFavorite': isFavorite
     };
   }
 
