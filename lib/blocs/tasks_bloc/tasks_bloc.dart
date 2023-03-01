@@ -13,6 +13,7 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
     on<DeleteTask>(_onDeleteTask);
     on<RemoveTask>(_onRemoveTask);
     on<MarkFavoriteOrunfavoriteTask>(_onMarkFavoriteOrunfavoriteTask);
+    on<EditTask>(_onEditTask);
   }
 
   void _onAddTask(AddTask event, Emitter<TasksState> emit) {
@@ -134,4 +135,22 @@ class TasksBloc extends Bloc<TasksEvent, TasksState> {
   // Map<String, dynamic>? toJson(TasksState state) {
   //   return state.toMap();
   // }
+
+  void _onEditTask(EditTask event, Emitter<TasksState> emit) {
+    final state = this.state;
+    List<Task> favoriteTasks = state.favoriteTasks;
+    if (event.oldTask.isFavorite == true) {
+      favoriteTasks
+        ..remove(event.oldTask)
+        ..insert(0, event.newTask);
+    }
+    emit(TasksState(
+      pendingTasks: List.from(state.pendingTasks)
+        ..remove(event.oldTask)
+        ..insert(0, event.newTask),
+      completedTasks: state.completedTasks..remove(event.oldTask),
+      favoriteTasks: favoriteTasks,
+      removedTasks: state.removedTasks,
+    ));
+  }
 }
