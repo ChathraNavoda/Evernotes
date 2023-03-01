@@ -6,6 +6,7 @@ class PopupMenu extends StatelessWidget {
   final VoidCallback cancelOrDeleteCallback;
   final VoidCallback likeOrDislike;
   final VoidCallback editTaskCllback;
+  final VoidCallback restoreTaskCllback;
 
   const PopupMenu({
     Key? key,
@@ -13,6 +14,7 @@ class PopupMenu extends StatelessWidget {
     required this.likeOrDislike,
     required this.task,
     required this.editTaskCllback,
+    required this.restoreTaskCllback,
   }) : super(key: key);
 
   @override
@@ -65,7 +67,7 @@ class PopupMenu extends StatelessWidget {
                       ),
                       label: const Text('Restore'),
                     ),
-                    onTap: () {}),
+                    onTap: restoreTaskCllback),
                 PopupMenuItem(
                     child: TextButton.icon(
                       onPressed: null,
